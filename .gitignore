@@ -1,0 +1,37 @@
+# deps / build
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+venv/
+.venv/
+__pycache__/
+
+# secrets: only *.env.example is committed
+.env
+.env.*
+!.env.example
+
+# local tooling / OS
+.DS_Store
+.idea/
+.claude/
+
+# private notes and credentials
+links
+ideas
+backtest
+
+# market data: licensed (OANDA/TradingView exports) or scraped; regenerate locally
+*.csv
+data/historical/
+data/pipeline/_archive/
+data/pipeline/features.json
+data/pipeline/labeled.json
+ai-reporter/data/
+
+# third-party GPL scraper, used locally to produce a one-time CSV import
+forexfactory-scraper/
+
+# old generator repos of backend/ and frontend/ (kept locally)
+.nested-git-backup/
