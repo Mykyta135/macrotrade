@@ -31,6 +31,7 @@ Order inside R2 is load-bearing: global panic checks run before regional ones, b
 ```mermaid
 flowchart TB
     subgraph sources[Data sources]
+        direction LR
         Y[Yahoo Finance] ~~~ F[FRED] ~~~ M[Myfxbook sentiment] ~~~ C[CFTC COT] ~~~ FF[Forex Factory calendar]
     end
     subgraph backend["backend · NestJS 11 + TypeORM + Postgres :3901"]
