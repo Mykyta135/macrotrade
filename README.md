@@ -4,6 +4,8 @@ A personal swing-trading dashboard. Every day it pulls macro data, intermarket s
 
 It is a research tool I built for myself, not financial advice and not an order-executing bot.
 
+> **About the git history.** I have been building MacroTrade since April 2026 as a personal tool. It was not under version control until I published it in November 2026, so the history here starts with that first commit.
+
 <img src=".github/dashboard.png" alt="Dashboard: eight pairs with R4 veto, R1 macro, R2 lie detector, R3 confluence and the verdict; below, a visual backtest of past verdicts over the EUR/USD chart" width="100%">
 
 ## How a pair gets scored
