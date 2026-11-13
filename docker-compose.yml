@@ -5,14 +5,15 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: ""
-      POSTGRES_HOST_AUTH_METHOD: trust
+      # No passwordless "trust" auth: set POSTGRES_PASSWORD in your shell or a root .env file.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
       POSTGRES_DB: macrotrade
     # NOTE: not used in the default local setup — MacroTrade connects to the
     # Homebrew postgresql@17 instance on 5432. Start this only if you want a
     # containerised DB instead, and point backend/.env DB_PORT at 5439.
     ports:
-      - "5439:5432"
+      # Local machine only, not every network interface.
+      - "127.0.0.1:5439:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

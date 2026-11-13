@@ -93,7 +93,7 @@ Claude responses are JSON and defensively parsed: markdown fences stripped, `ext
 
 - `backend/.env` — `FRED_API_KEY`, `MYFXBOOK_SESSION`, `PORT`, `DB_HOST/PORT/NAME/USER/PASSWORD`
 - `frontend/.env.local` — `NEXT_PUBLIC_API_URL`
-- `ai-reporter/.env` — the key is read as **`CLAUDE_KEY`** (`config.ts` `requireEnv`), though `.env.example` and the README both say `ANTHROPIC_API_KEY`. `CLAUDE_KEY` is what actually works. Also `PORT`, `BACKEND_URL`, `CRON_SCHEDULE`, `REPORT_CACHE_TTL`, `WARMUP_ON_START`.
+- `ai-reporter/.env` — the key is read from `ANTHROPIC_API_KEY` (as in `.env.example`), falling back to the older `CLAUDE_KEY`. Also `HOST` (default `127.0.0.1`), `PORT`, `BACKEND_URL`, `CRON_SCHEDULE`, `REPORT_CACHE_TTL`, `WARMUP_ON_START`.
 
 ## Frontend: non-standard Next.js
 

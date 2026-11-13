@@ -51,7 +51,8 @@ if (config.warmupOnStart) {
   }, 3000);
 }
 
-app.listen(config.port, () => {
+// A personal tool: listen on loopback only, not on the local network.
+app.listen(config.port, process.env.HOST ?? '127.0.0.1', () => {
   console.log(`AI Reporter listening on http://localhost:${config.port}`);
   console.log(`Cron schedule: ${config.cronSchedule}`);
   console.log(`Backend URL: ${config.backendUrl}`);
